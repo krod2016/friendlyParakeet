@@ -16,40 +16,40 @@ function writePassword() {
 
 //parameters for random password
 if (length >= 8 && length <= 128) {
-  var userNum = confirm('Would you like to use a number?');
-  if (userNum) {
-    passwordSet += selectionOfCharachters.userNum;
+  var numberChar = confirm('Would you like to use a number?');
+  if (numberChar) {
+    passwordSet += selectionOfCharachters.numberChar;
   }
-  var userCap = confirm('Would you like to use a capital letter?');
-  if (userCap) {
-    passwordSet += selectionOfCharachters.userCap;
+  var capitalChar = confirm('Would you like to use a capital letter?');
+  if (capitalChar) {
+    passwordSet += selectionOfCharachters.capitalChar;
   }
-  var userLwr = confirm('Would you like to use a lower case number?');
-  if (userLwr) {
-    passwordSet += selectionOfCharachters.userLwr;
+  var lowerChar = confirm('Would you like to use a lower case number?');
+  if (lowerChar) {
+    passwordSet += selectionOfCharachters.lowerChar;
   }
-  var userSpec = confirm('Would you like to use a special character?');
-  if (userSpec) {
-    passwordSet += selectionOfCharachters.userSpec;
+  var specialChar = confirm('Would you like to use a special character?');
+  if (specialChar) {
+    passwordSet += selectionOfCharachters.specialChar;
   }
 }
 
 // If user follows parameters
-if (userNum) {
+if (numberChar) {
   ranCharPool = ranCharPool.concat(numberChar)
 }
-if (userCap) {
+if (capitalChar) {
   ranCharPool = ranCharPool.concat(capitalChar)
 }
-if (userLwr) {
+if (lowerChar) {
   ranCharPool = ranCharPool.concat(lowerChar)
 }
-if (userSpec) {
+if (specialChar) {
   ranCharPool = ranCharPool.concat(specialChar)
 }
 
 // If user doesn't follow parameters
-if (userNum, userCap, userLwr, userSpec === "" || userNum, userCap, userLwr, userSpec === null) {
+if (numberChar, capitalChar, lowerChar, specialChar === "" || numberChar, capitalChar, lowerChar, specialChar === null) {
   window.alert("Please choose a valid response.");
 }
 
