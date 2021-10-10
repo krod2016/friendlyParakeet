@@ -1,8 +1,11 @@
-var numChar = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9",];
-var capChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
-var lwrChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var specChar = ["!", "#", "$", "%", "&", "*", "-", ".", "?", "@",]
-var ranCharPool = []
+//character variables
+const selectionOfCharacters = {
+  numberChar: '0123456789',
+  capitalChar: 'abcdefghifklmnopqrstuvwxyz',
+  lowerChar: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  specialChar: '!#$%&*-.?@',
+  ranCharPool: '',
+};
 
 // Write password to the #password input
 function writePassword() {
@@ -12,15 +15,15 @@ function writePassword() {
 }
 
 //parameters for random password
-function getUserData() {
-  var userNum = confirm( 'Would you like to use a number?');
-    if (userNum) {
-      passwordSet += selectionOfCharachters.userNum;
-    }
+if (length >= 8 && length <= 128) {
+  var userNum = confirm('Would you like to use a number?');
+  if (userNum) {
+    passwordSet += selectionOfCharachters.userNum;
+  }
   var userCap = confirm('Would you like to use a capital letter?');
-    if (userCap) {
-      passwordSet += selectionOfCharachters.userCap;
-    }
+  if (userCap) {
+    passwordSet += selectionOfCharachters.userCap;
+  }
   var userLwr = confirm('Would you like to use a lower case number?');
   if (userLwr) {
     passwordSet += selectionOfCharachters.userLwr;
@@ -29,50 +32,39 @@ function getUserData() {
   if (userSpec) {
     passwordSet += selectionOfCharachters.userSpec;
   }
-  var userInput = window.prompt ('Please choose your password character length varying from 8-20.');
-  if (userInput) {
-    passwordSet += selectionOfCharachters.userInput;
-  }
-}
-
-// Using user inputs, translating to integer
-if (parseInt(userInput) <=8) {
-  alert('Please select a criteria value.')
 }
 
 // If user follows parameters
 if (userNum) {
-  ranCharPool = ranCharPool.concat(numChar)
+  ranCharPool = ranCharPool.concat(numberChar)
 }
 if (userCap) {
-  ranCharPool = ranCharPool.concat(capChar)
+  ranCharPool = ranCharPool.concat(capitalChar)
 }
 if (userLwr) {
-  ranCharPool = ranCharPool.concat(lwrChar)
+  ranCharPool = ranCharPool.concat(lowerChar)
 }
 if (userSpec) {
-  ranCharPool = ranCharPool.concat(specChar)
+  ranCharPool = ranCharPool.concat(specialChar)
 }
 
 // If user doesn't follow parameters
-if (userNum === false && userCap === false && userLwr === false && userSpec === false) {
-  alert("Please choose a valid response.")
-  return null;
+if (userNum, userCap, userLwr, userSpec === "" || userNum, userCap, userLwr, userSpec === null) {
+  window.alert("Please choose a valid response.");
 }
 
 var ranPassword = ''
-for (let i =0; i < length; i++) {
-  ranPassword += ranCharPool (
-  Math.floor(math.random) * ranCharPool.length
+for (let i = 0; i < length; i++) {
+  ranPassword += ranCharPool(
+    Math.floor(math.random) * ranCharPool.length
   )
-  return password;
 }
 
 // Get references to the #generate element
-document.querySelector("#generate").addEventListener("click", getUserData);
+document.querySelector("#generate").addEventListener("click", selectionOfCharacters);
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+document.getElementById('#generatebtn').addEventListener("click", writePassword);
 
 // End of function
 writePassword()
