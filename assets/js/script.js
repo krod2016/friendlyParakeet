@@ -14,42 +14,47 @@ function writePassword() {
   passwordText.value = password;
 }
 
+var length = "passwordLength";
+
 //parameters for random password
-if (length >= 8 && length <= 128) {
-  var numberChar = confirm('Would you like to use a number?');
-  if (numberChar) {
-    passwordSet += selectionOfCharachters.numberChar;
-  }
-  var capitalChar = confirm('Would you like to use a capital letter?');
-  if (capitalChar) {
-    passwordSet += selectionOfCharachters.capitalChar;
-  }
-  var lowerChar = confirm('Would you like to use a lower case number?');
-  if (lowerChar) {
-    passwordSet += selectionOfCharachters.lowerChar;
-  }
-  var specialChar = confirm('Would you like to use a special character?');
-  if (specialChar) {
-    passwordSet += selectionOfCharachters.specialChar;
+function generatePassword() {
+  if (length >= 8 && length <= 128) {
+    var numberChar = window.prompt('Would you like to use a number?');
+    if (numberChar) {
+      passwordSet += selectionOfCharacters.numberChar;
+    }
+    var capitalChar = window.prompt('Would you like to use a capital letter?');
+    if (capitalChar) {
+      passwordSet += selectionOfCharachters.capitalChar;
+    }
+    var lowerChar = window.prompt('Would you like to use a lower case number?');
+    if (lowerChar) {
+      passwordSet += selectionOfCharachters.lowerChar;
+    }
+    var specialChar = window.prompt('Would you like to use a special character?');
+    if (specialChar) {
+      passwordSet += selectionOfCharachters.specialChar;
+    }
   }
 }
 
 // If user follows parameters
-if (numberChar) {
-  ranCharPool = ranCharPool.concat(numberChar)
+if (selectionOfCharacters.numberChar) {
+  selectionOfCharacters.ranCharPool = selectionOfCharacters.ranCharPool.concat(selectionOfCharacters.numberChar)
 }
-if (capitalChar) {
-  ranCharPool = ranCharPool.concat(capitalChar)
+if (selectionOfCharacters.capitalChar) {
+  selectionOfCharacters.ranCharPool = selectionOfCharacters.ranCharPool.concat(selectionOfCharacters.capitalChar)
 }
-if (lowerChar) {
-  ranCharPool = ranCharPool.concat(lowerChar)
+if (selectionOfCharacters.lowerChar) {
+  selectionOfCharacters.ranCharPool = selectionOfCharacters.ranCharPool.concat(selectionOfCharacters.lowerChar)
 }
-if (specialChar) {
-  ranCharPool = ranCharPool.concat(specialChar)
+if (selectionOfCharacters.specialChar) {
+  selectionOfCharacters.ranCharPool = selectionOfCharacters.ranCharPool.concat(selectionOfCharacters.specialChar)
 }
 
 // If user doesn't follow parameters
-if (numberChar, capitalChar, lowerChar, specialChar === "" || numberChar, capitalChar, lowerChar, specialChar === null) {
+if (selectionOfCharacters.numberChar, selectionOfCharacters.capitalChar, selectionOfCharacters.lowerChar, selectionOfCharacters.specialChar === "" 
+|| selectionOfCharacters.numberChar, selectionOfCharacters.capitalChar, selectionOfCharacters.lowerChar, selectionOfCharacters.specialChar === null) {
   window.alert("Please choose a valid response.");
 }
 
@@ -64,13 +69,7 @@ for (let i = 0; i < length; i++) {
 document.querySelector("#generate").addEventListener("click", selectionOfCharacters);
 
 // Add event listener to generate button
-document.getElementById('#generatebtn').addEventListener("click", writePassword);
+document.getElementById('generate').addEventListener("click", writePassword);
 
 // End of function
 writePassword()
-
-
-
-
-
-
