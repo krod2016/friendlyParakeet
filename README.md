@@ -12,6 +12,7 @@
 * JavaScript
 
 # Repository Link
+https://github.com/krod2016/friendlyParakeet
 
 # Website
 
