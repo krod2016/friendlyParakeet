@@ -18,20 +18,20 @@ var length = "passwordLength";
 
 //parameters for random password
 function generatePassword() {
-  if (length >= 8 && length <= 128) {
-    var numberChar = window.prompt('Would you like to use a number?');
+  if (length.length >= 8 && length.length <= 128) {
+    var numberChar = confirm('Would you like to use a number?');
     if (numberChar) {
       passwordSet += selectionOfCharacters.numberChar;
     }
-    var capitalChar = window.prompt('Would you like to use a capital letter?');
+    var capitalChar = confirm('Would you like to use a capital letter?');
     if (capitalChar) {
       passwordSet += selectionOfCharachters.capitalChar;
     }
-    var lowerChar = window.prompt('Would you like to use a lower case number?');
+    var lowerChar = confirm('Would you like to use a lower case number?');
     if (lowerChar) {
       passwordSet += selectionOfCharachters.lowerChar;
     }
-    var specialChar = window.prompt('Would you like to use a special character?');
+    var specialChar = confirm('Would you like to use a special character?');
     if (specialChar) {
       passwordSet += selectionOfCharachters.specialChar;
     }
@@ -72,4 +72,3 @@ document.querySelector("#generate").addEventListener("click", selectionOfCharact
 document.getElementById('generate').addEventListener("click", writePassword);
 
 // End of function
-writePassword()
