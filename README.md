@@ -1,9 +1,21 @@
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
+## Password Generator
 
-GIVEN I need a new, secure password
- 
-WHEN all prompts are answered THEN a password is generated that matches the selected criteria
+# Description
+* This website was created so a company can create a strong password.
 
-WHEN the password is generated THEN the password is either displayed in an alert or written to the page 
+# Image
+![image](https://user-images.githubusercontent.com/88009884/136723800-d73008a2-be25-44ff-85ec-41f89dd606e2.png)
+
+# Built With
+* CSS
+* HTML
+* JavaScript
+
+# Repository Link
+https://github.com/krod2016/friendlyParakeet
+
+# Website
+https://krod2016.github.io/friendlyParakeet/
+
+# Contribution
+* Made with love by Katrina Rodriguez
