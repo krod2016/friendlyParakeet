@@ -4,7 +4,7 @@ const selectionOfCharacters = {
   capitalChar: 'abcdefghifklmnopqrstuvwxyz',
   lowerChar: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
   specialChar: '!#$%&*-.?@',
-  ranCharPool: '',
+  ranCharPool: '0123456789abcdefghifklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&*-.?@',
 };
 
 // Write password to the #password input
@@ -14,62 +14,38 @@ function writePassword() {
   passwordText.value = password;
 }
 
-var length = "passwordLength";
-
 //parameters for random password
 function generatePassword() {
   var passwordSet = "";
-  if (length.length >= 8 && length.length <= 128) {
-    var numberChar = confirm('Would you like to use a number?');
+  var length = prompt("How many charachters for your password?");
+  length = parseInt(length)
+
+  if (length >= 8 && length <= 128) {
+    var numberChar = confirm("Would you like to use a number? Choose 'OK' for yes, and 'Cancel' for no.");
     if (numberChar) {
       passwordSet += selectionOfCharacters.numberChar;
     }
-    var capitalChar = confirm('Would you like to use a capital letter?');
+    var capitalChar = confirm("Would you like to use a capital letter? Choose 'OK' for yes, and 'Cancel' for no.");
     if (capitalChar) {
       passwordSet += selectionOfCharacters.capitalChar;
     }
-    var lowerChar = confirm('Would you like to use a lower case number?');
+    var lowerChar = confirm("Would you like to use a lowercase letter? Choose 'OK' for yes, and 'Cancel' for no.");
     if (lowerChar) {
       passwordSet += selectionOfCharacters.lowerChar;
     }
-    var specialChar = confirm('Would you like to use a special character?');
+    var specialChar = confirm("Would you like to use a special character? Choose 'OK' for yes, and 'Cancel' for no.");
     if (specialChar) {
       passwordSet += selectionOfCharacters.specialChar;
     }
   }
+
+  console.log(passwordSet) //string with the character pool.
+
+  var ranPassword = ['']
+  for (let i = 0; i < length; i++) {
+    ranPassword += selectionOfCharacters.ranCharPool[Math.floor(Math.random() * selectionOfCharacters.ranCharPool.length)] /* a randomly selected character from passwordSet */
+  }
+  return ranPassword
 }
 
-// If user follows parameters
-if (selectionOfCharacters.numberChar) {
-  selectionOfCharacters.ranCharPool = selectionOfCharacters.ranCharPool.concat(selectionOfCharacters.numberChar)
-}
-if (selectionOfCharacters.capitalChar) {
-  selectionOfCharacters.ranCharPool = selectionOfCharacters.ranCharPool.concat(selectionOfCharacters.capitalChar)
-}
-if (selectionOfCharacters.lowerChar) {
-  selectionOfCharacters.ranCharPool = selectionOfCharacters.ranCharPool.concat(selectionOfCharacters.lowerChar)
-}
-if (selectionOfCharacters.specialChar) {
-  selectionOfCharacters.ranCharPool = selectionOfCharacters.ranCharPool.concat(selectionOfCharacters.specialChar)
-}
-
-// If user doesn't follow parameters
-if (selectionOfCharacters.numberChar, selectionOfCharacters.capitalChar, selectionOfCharacters.lowerChar, selectionOfCharacters.specialChar === "" 
-|| selectionOfCharacters.numberChar, selectionOfCharacters.capitalChar, selectionOfCharacters.lowerChar, selectionOfCharacters.specialChar === null) {
-  window.alert("Please choose a valid response.");
-}
-
-var ranPassword = ''
-for (let i = 0; i < length; i++) {
-  ranPassword += ranCharPool(
-    Math.floor(math.random) * ranCharPool.length
-  )
-}
-
-// Get references to the #generate element
-document.querySelector("#generate").addEventListener("click", selectionOfCharacters);
-
-// Add event listener to generate button
 document.getElementById('generate').addEventListener("click", writePassword);
-
-// End of function
