@@ -15,6 +15,7 @@
 https://github.com/krod2016/friendlyParakeet
 
 # Website
+https://krod2016.github.io/friendlyParakeet/
 
 # Contribution
 * Made with love by Katrina Rodriguez
