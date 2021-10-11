@@ -18,6 +18,7 @@ var length = "passwordLength";
 
 //parameters for random password
 function generatePassword() {
+  var passwordSet = "";
   if (length.length >= 8 && length.length <= 128) {
     var numberChar = confirm('Would you like to use a number?');
     if (numberChar) {
@@ -25,15 +26,15 @@ function generatePassword() {
     }
     var capitalChar = confirm('Would you like to use a capital letter?');
     if (capitalChar) {
-      passwordSet += selectionOfCharachters.capitalChar;
+      passwordSet += selectionOfCharacters.capitalChar;
     }
     var lowerChar = confirm('Would you like to use a lower case number?');
     if (lowerChar) {
-      passwordSet += selectionOfCharachters.lowerChar;
+      passwordSet += selectionOfCharacters.lowerChar;
     }
     var specialChar = confirm('Would you like to use a special character?');
     if (specialChar) {
-      passwordSet += selectionOfCharachters.specialChar;
+      passwordSet += selectionOfCharacters.specialChar;
     }
   }
 }
